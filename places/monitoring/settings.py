@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'places.urls'
+ROOT_URLCONF = 'monitoring.urls'
 
 TEMPLATES = [
     {
@@ -69,7 +69,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'places.wsgi.application'
+WSGI_APPLICATION = 'monitoring.wsgi.application'
 
 
 # Database
@@ -137,6 +137,5 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_ROOT, 'static'),
 )
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PATH_VAR = "http://0.0.0.0:8080/places"
