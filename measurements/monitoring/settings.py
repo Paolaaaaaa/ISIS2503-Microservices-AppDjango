@@ -134,4 +134,4 @@ STATICFILES_DIRS = (
 )
 
 PATH_VAR = "http://0.0.0.0:8080/variables"
-PATH_PLACES = "http://0.0.0.0:8080/places"
+PATH_PLACES = "http://10.128.0.10:8080/places"
