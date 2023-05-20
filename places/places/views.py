@@ -15,7 +15,7 @@ def list_places(request):
 
 def placeCreate(request):
     if request.method =='POST':
-        data = request.body.decode('uft-8')
+        data = request.body.decode('utf-8')
         data_json = json.loads(data)
         place = Place()
         place.name = data_json["name"]
