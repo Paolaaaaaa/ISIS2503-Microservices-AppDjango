@@ -51,7 +51,7 @@ def MeasurementsCreate(request):
         data_json = json.loads(data)
         measurement_list = []
         for measurement in data_json:
-                    if check_variable(measurement) == True and check_place(data_json):
+                    if check_variable(measurement) == True:
                         db_measurement = Measurement()
                         db_measurement.variable = measurement['variable']
                         db_measurement.value = measurement['value']
@@ -63,3 +63,5 @@ def MeasurementsCreate(request):
         
         Measurement.objects.bulk_create(measurement_list)
         return HttpResponse("successfully created measurements")
+
+

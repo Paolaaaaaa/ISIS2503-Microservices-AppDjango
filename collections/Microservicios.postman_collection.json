@@ -1,22 +1,22 @@
 {
 	"info": {
-		"_postman_id": "1b92d085-1dc2-4d1e-80ff-0b9726517a52",
+		"_postman_id": "cc74ddb0-e312-42b2-999a-22f7664eb7fd",
 		"name": "Microservicios",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "23312038"
+		"_exporter_id": "27530546"
 	},
 	"item": [
 		{
 			"name": "Kong",
 			"item": [
 				{
-					"name": "Registrar servicio",
+					"name": "Registrar servicio Measurements",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\":\"measurements\",\r\n    \"url\": \"http://35.193.151.156:8080\"\r\n}",
+							"raw": "{\r\n    \"name\":\"measurements\",\r\n    \"url\": \"http://10.128.0.5:8080\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -24,13 +24,13 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.69.159.153:8001/services",
+							"raw": "http://104.154.76.65:8001/services",
 							"protocol": "http",
 							"host": [
-								"34",
-								"69",
-								"159",
-								"153"
+								"104",
+								"154",
+								"76",
+								"65"
 							],
 							"port": "8001",
 							"path": [
@@ -41,13 +41,13 @@
 					"response": []
 				},
 				{
-					"name": "Registrar ruta",
+					"name": "Registrar servicio Variables",
 					"request": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"hosts\": [\"10.128.0.31\", \"0.0.0.0\", \"34.69.159.153\"],\r\n     \"paths\": [\"/measurements\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"GET\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"261f278b-a35e-4c61-af55-66f8b3aa7406\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"raw": "{\r\n    \"name\":\"variables\",\r\n    \"url\": \"http://10.128.0.4:8080\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -55,13 +55,267 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.69.159.153:8001/routes/",
+							"raw": "http://104.154.76.65:8001/services",
 							"protocol": "http",
 							"host": [
-								"34",
-								"69",
-								"159",
-								"153"
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar servicio Place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"places\",\r\n    \"url\": \"http://10.128.0.10:8080\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/services",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"services"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta measurements",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.5\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/measurements\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"GET\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"a47312d2-db1f-41e3-b7c2-99fe370aa513\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"routes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta Variables",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.4\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/variables\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"GET\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"d0112bff-60ca-4f83-9b84-d6992ac8473d\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"routes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta measurements Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.5\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/measurementcreate\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"POST\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"a47312d2-db1f-41e3-b7c2-99fe370aa513\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"routes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta measurements Create Copy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.5\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/measurementscreate\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"POST\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"a47312d2-db1f-41e3-b7c2-99fe370aa513\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"routes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta Place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.10\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/places\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"GET\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"93cc253f-9256-4c2f-9f33-bd0a88197b63\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"routes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta Place create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.10\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/placecreate\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"POST\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"93cc253f-9256-4c2f-9f33-bd0a88197b63\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8001",
+							"path": [
+								"routes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar ruta Variables Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hosts\": [\"10.128.0.10\", \"0.0.0.0\", \"104.154.76.65\"],\r\n     \"paths\": [\"/variablecreate\"],\r\n    \"strip_path\": false,\r\n    \"methods\": [\r\n        \"POST\"\r\n    ],\r\n    \"service\": {\r\n        \"id\": \"d0112bff-60ca-4f83-9b84-d6992ac8473d\"\r\n       },\r\n    \"preserve_host\": true\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8001/routes/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
 							],
 							"port": "8001",
 							"path": [
@@ -92,15 +346,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.171.66.152:8080/variablecreate/",
+							"raw": "http://104.154.76.65:8000/variablecreate/",
 							"protocol": "http",
 							"host": [
-								"34",
-								"171",
-								"66",
-								"152"
+								"104",
+								"154",
+								"76",
+								"65"
 							],
-							"port": "8080",
+							"port": "8000",
 							"path": [
 								"variablecreate",
 								""
@@ -127,17 +381,82 @@
 							}
 						},
 						"url": {
-							"raw": "http://34.171.66.152:8080/variables/",
+							"raw": "http:///104.154.76.65:8000/variables/",
+							"protocol": "http",
+							"path": [
+								"104.154.76.65:8000",
+								"variables",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Places",
+			"item": [
+				{
+					"name": "Get Places",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Temperatura\",\r\n    \"data\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8000/places",
 							"protocol": "http",
 							"host": [
-								"34",
-								"171",
-								"66",
-								"152"
+								"104",
+								"154",
+								"76",
+								"65"
 							],
-							"port": "8080",
+							"port": "8000",
 							"path": [
-								"variables",
+								"places"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Place",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"ML-516\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://104.154.76.65:8000/placecreate/",
+							"protocol": "http",
+							"host": [
+								"104",
+								"154",
+								"76",
+								"65"
+							],
+							"port": "8000",
+							"path": [
+								"placecreate",
 								""
 							]
 						}
@@ -164,17 +483,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://35.193.151.156:8080/measurementcreate/",
+							"raw": "http://104.154.76.65:8000/createmeasurement/",
 							"protocol": "http",
 							"host": [
-								"35",
-								"193",
-								"151",
-								"156"
+								"104",
+								"154",
+								"76",
+								"65"
 							],
-							"port": "8080",
+							"port": "8000",
 							"path": [
-								"measurementcreate",
+								"createmeasurement",
 								""
 							]
 						}
@@ -199,18 +518,17 @@
 							}
 						},
 						"url": {
-							"raw": "http://35.193.151.156:8080/measurements/",
+							"raw": "http://104.154.76.65:8001/measurements",
 							"protocol": "http",
 							"host": [
-								"35",
-								"193",
-								"151",
-								"156"
+								"104",
+								"154",
+								"76",
+								"65"
 							],
-							"port": "8080",
+							"port": "8001",
 							"path": [
-								"measurements",
-								""
+								"measurements"
 							]
 						}
 					},
@@ -231,16 +549,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://35.193.151.156:8080/createmeasurements/",
+							"raw": "http:///104.154.76.65:8000/createmeasurements/",
 							"protocol": "http",
-							"host": [
-								"35",
-								"193",
-								"151",
-								"156"
-							],
-							"port": "8080",
 							"path": [
+								"104.154.76.65:8000",
 								"createmeasurements",
 								""
 							]
